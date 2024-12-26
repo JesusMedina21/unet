@@ -1,0 +1,81 @@
+ion-card {
+  gap: 20px; /* Reduced gap for smaller screens */
+  padding: 10px; /* Added padding */
+  border-radius: 5px;
+}
+
+ion-content {
+  --padding-bottom: 70px;
+}
+
+ion-fab {
+  bottom: 70px; /* 70 SI ES ONLINE, 0 si es local Ajusta el valor según la cantidad de píxeles que deseas subir el footer */
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Espacia los elementos para que estén en extremos opuestos */
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.nav-item {
+  margin: 0 10px; /* Espaciado horizontal entre los elementos */
+}
+
+.sign-out {
+  margin-left: auto; /* Empuja el botón a la derecha */
+}
+
+ion-footer {
+  position: fixed;
+  bottom: 0px; /* 0 SI ES ONLINE, 20 si es Local */
+  width: 100%;
+}
+.nav-container {
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+.nav-item {
+  flex: 1; /* Allow items to grow */
+  text-align: center; /* Center items */
+}
+
+.nav-item a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: white; /* Color del texto */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.nav-item a:hover {
+  color: #0026ff; /* Color del texto al pasar el mouse (puedes cambiarlo según sea necesario) */
+}
+.custom-header {
+  height: 80px; /* Ajusta la altura */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+}
+.sign-out {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar el mouse */
+}
+
+.sign-out:hover {
+  background-color: #d9534f; /* Cambia el color de fondo al pasar el mouse */
+  color: white; /* Cambia el color del texto al pasar el mouse */
+}
+img {
+  max-width: 100%; /* Asegura que las imágenes escalen con su contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+  display: block; /* Hace que la imagen sea un bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  width: 100%; /* Las imágenes ocuparán todo el ancho del contenedor */
+}
+@media (max-width: 768px) {
+  .custom-header {
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: flex-start; /* Align to the start */
+  }
+  .sign-out {
+    margin-top: 10px; /* Add margin for spacing */
+  }
+}

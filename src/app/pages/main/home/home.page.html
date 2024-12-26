@@ -1,0 +1,142 @@
+
+<ion-content>
+  <ion-header class="ion-no-border">
+    <!--Color secondary es un atributo que trae por defecto el 
+    framework Ionic y asigna colores como el nombre lo dice-->
+    <ion-toolbar color="secondary" class="custom-header">
+      <ion-title>
+        <div class="nav-container">
+          <div class="nav-item">
+            <p>Clientes del CURSO BACKEND</p>
+          </div>
+          <div class="nav-item"> 
+            <!--La clase btn btn primary sale del css de Bootstrap-->
+            <a class="btn btn-primary" (click)="signOut()">Salir</a>
+          </div>
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+
+  <ion-card mode="ios" color="medium" class="d-flex-center ion-text-center" >
+    <div>
+      <h5>{{Deudas.length}}</h5>
+      <h5>Deuda Existentes</h5>
+    </div>
+  </ion-card>  
+
+
+<br>
+
+    <br>
+<div style="clear: both;">
+    <!-------------------------------------------------------Deuda----------------------------------------------------->
+  <ion-list *ngIf="!loading">
+    <ion-item-sliding class="Deuda-item" *ngFor="let p of Deudas">
+      <ion-item>
+        <ion-label>
+          <div class="name">{{p.name}}</div>
+          <div class="data">
+            <strong>Precio: </strong> {{p.precio}} Pesos Colombianos
+            <br>
+          </div>
+
+          <div class="button-container">
+          <ion-button (click)="addUpdateDeuda(p)" color="secondary">
+            <ion-icon class="option-btn" name="create-outline"></ion-icon>
+          </ion-button>
+          
+          <ion-button (click)="confirmDeleteDeuda(p)" color="danger">
+            <ion-icon class="option-btn" name="trash-outline"></ion-icon>
+          </ion-button>
+        </div>
+
+          
+        </ion-label>
+        
+        
+      </ion-item>
+      
+
+      
+
+      
+
+    </ion-item-sliding>
+  </ion-list> 
+</div>  
+<div *ngIf="!loading && !Deudas.length" class="empty">
+    
+  <app-logo></app-logo>
+
+  <h3>No hay Deuda existentes</h3>
+  
+</div>
+<div *ngIf="data && data.length > 0">
+  <h2 style="text-align: center; margin-bottom: 20px;">Lista de Instrumentos</h2>
+  <div class="container">
+    <div class="row">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="4" *ngFor="let instrumento of data">
+            <strong>Nombre:</strong> {{ instrumento.Nombre_Del_Instrumento }}
+            <br>
+            <strong>Familia:</strong> {{ instrumento.Familia_Del_Instrumento }}
+            <br>
+            <img [src]="instrumento.Foto" alt="{{ instrumento.Nombre_Del_Instrumento }}" style="max-width: 100%;" class="img-thumbnail">
+            <br><br>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</div>
+<div *ngIf="!data || data.length === 0">
+  <p>No se encontraron instrumentos.</p>
+</div>
+  <br><br><br>
+
+  <!-------------------------------------------------CARGANDO---------------------------------------------------------------->
+
+  <ion-list *ngIf="loading">
+    <ion-item class="Deuda-item" *ngFor="let p of [1,1,1,1,1,1,1,1]">
+      <ion-avatar slot="start"> <!--Este start hace que el texto se vea un poquito mas separado de la imagen-->
+       <ion-skeleton-text animated style="width: 100%; height: 100%;"></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <div> <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></div>
+        <div> <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></div>
+      </ion-label>
+    </ion-item> 
+  </ion-list> 
+
+  <!----------------------------------------------Sin Deuda disponibles---------------------------------------------------------------->
+
+
+
+
+  <!---------------------Agregar Deudado--------->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addUpdateDeuda()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+ 
+  <ion-footer>
+    <ion-toolbar color="secondary">
+      <!-- Contenido del footer -->
+      <p class="ion-text-center">Copyright &copy; jesusmedina0921&#64;gmail.com 
+        <br>Todos los derechos reservados.
+        <br>
+      </p>
+    </ion-toolbar>
+  </ion-footer>
+  
+
+</ion-content>

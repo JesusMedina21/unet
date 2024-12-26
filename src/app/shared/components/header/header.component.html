@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary" class="custom-header">
+
+    <!--Boton de regreso-->
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="backButton" [defaultHref]="backButton"  ></ion-back-button>
+   
+
+      <ion-button (click)="dismissModal()" *ngIf="isModal">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+
+  <!--Esto es un header reutilizable que lo uso en login y registro, en el home no porque ya es otro-->
+
+    </ion-buttons>
+
+    
+    <ion-title>
+      <br>
+      <strong>{{title}}</strong>
+      <div class="admin">Clientes del CURSO BACKEND
+      </div>
+      <br>
+      <div class="admin2">
+        
+      </div>
+    </ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <!-- Contenido del footer -->
+    <p class="ion-text-center">Copyright &copy; jesusmedina0921&#64;gmail.com 
+      <br>Todos los derechos reservados.
+      <br>
+    </p>
+  </ion-toolbar>
+</ion-footer>
