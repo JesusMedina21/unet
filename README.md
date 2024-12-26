@@ -6,7 +6,7 @@ Segunda Parte del Curso Programacion Fullstack impartido por la Universidad Expe
  
 Y despues necesitas ejecutar los siguientes comandos en la consola, cmd o terminal
 
- npm install --legacy-peer-deps
+ npm install 
 
  npm install -g @ionic/cli
 
