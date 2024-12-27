@@ -10,7 +10,7 @@ Y despues necesitas ejecutar los siguientes comandos en la consola, cmd o termin
 
  npm install -g @ionic/cli
 
- Para ejecutar el proyecto en el navegador
+ Para ejecutar el proyecto en el navegador, ejecutar el siguiente comando
 
  ionic serve
 
